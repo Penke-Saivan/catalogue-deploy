@@ -23,7 +23,7 @@ pipeline {
         disableConcurrentBuilds()
     }
     parameters {
-        string(name: 'appVersion', decsription:'which version')
+        string(name: 'appVersion', description:'which version')
         choice(name: 'DEPLOY_TO', choices: ['qa', 'dev', 'prod'], description: 'Pick something')
     }
 

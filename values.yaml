@@ -1,5 +1,5 @@
 deployment:
-  imageRepo: tonyduck/catalogue
-  imageVersion: v1
+  imageRepo: 131676642204.dkr.ecr.us-east-1.amazonaws.com/roboshop/catalogue # tonyduck/catalogue
+  imageVersion: IMAGE_VERSION #this version is substiuted by sed editor in the run time
 service:
   servicePort: 8080 # default value

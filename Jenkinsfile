@@ -24,7 +24,7 @@ pipeline {
     }
     parameters {
         string(name: 'appVersion', description:'which version')
-        choice(name: 'DEPLOY_TO', choices: ['dev', 'qa', 'prod'], description: 'Pick something')
+        choice(name: 'DEPLOY_TO', choices: ['qa', 'dev', 'prod'], description: 'Pick something')
     }
 
     // ------------------- build stage -----------------------
@@ -34,8 +34,12 @@ pipeline {
                 script {
                     withAWS(region: 'us-east-1', credentials: 'aws-creds') {
                         sh """
-
+                        ls -l
+                        pwd
+                        
                         aws eks update-kubeconfig --name ${PROJECT}-${params.DEPLOY_TO} --region ${REGION}
+
+                        ls -l
                        """
                     }
                 }

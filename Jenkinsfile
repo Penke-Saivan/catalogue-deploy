@@ -36,9 +36,9 @@ pipeline {
                         sh """
                         ls -l
                         pwd
-                        
-                        aws eks update-kubeconfig --name ${PROJECT}-${params.DEPLOY_TO} --region ${REGION}
 
+                        aws eks update-kubeconfig --name ${PROJECT}-${params.DEPLOY_TO} --region ${REGION}
+                        kubectl get nodes
                         ls -l
                        """
                     }
